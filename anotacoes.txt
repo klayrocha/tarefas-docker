@@ -1,0 +1,25 @@
+1 - Criar a imagem a partir do Dockerfile
+
+docker build -f Dockerfile --build-arg JAR_FILE=docker-klayrocha-0.0.1-SNAPSHOT.jar  -t klayrocha/docker-klayrocha .
+
+2 - Rodar criar um container de uma imagem criada
+
+docker run --name docker-klayrocha -d -p 8085:8080 klayrocha/docker-klayrocha
+
+3 - Verificar as portas usadas para o container
+
+docker container port docker-klayrocha
+
+4 - Verifica os processos
+docker container top docker-klayrocha
+
+
+5 - Logs
+
+docker logs -f --tail 10 docker-klayrocha
+
+6 - Entrar no mysql
+
+docker exec -it mysql bash
+
+
